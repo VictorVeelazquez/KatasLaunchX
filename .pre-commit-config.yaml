@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: operacion-limpieza
+        name: operacion-limpieza
+        files: \.ipynb$
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
